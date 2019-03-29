@@ -7,37 +7,70 @@
  */
 
 #include <iostream>
+#include "Tree.hpp"
 using std::cout, std::endl;
 
-#include "Tree.hpp"
-#include "str_exception.hpp"
 
-int main() {
-  try {
+int main()
+{
+  try
+  {
     // constructs an empty tree:
     ariel::Tree emptytree;
-    cout << "emptytree: size=" << emptytree.size() << endl; // should print 0
+    cout << "Empty tree: size=" << emptytree.size() << endl; // should print 0
     
-    // constructs an ordered binary tree where:
-      // 5 is in the root;
-      // 3 is the root's left child;
-      // 7 is the root's right child.
-    ariel::Tree threetree;
-    threetree.insert(5);
-    threetree.insert(7);
-    threetree.insert(3);
-    cout << "threetree: size=" << threetree.size() << " root=" << threetree.root() << endl << "   ";  // size=3, root=5.
-    threetree.print();
+    // constructs an ordered binary tree:
+    ariel::Tree tree;
+
+    // insert check
+    tree.insert(5);
+    tree.insert(7);
+    tree.insert(3);
+    tree.insert(4);
+    tree.insert(10);
+    tree.insert(9);
+    tree.insert(1);
+    tree.insert(15);
+    tree.insert(2);
+
+    cout << "Tree: size=" << tree.size() << " root=" << tree.root() << endl << "   ";  // size=9, root=5.
+    tree.print();
     cout << endl;
       
-    cout << threetree.size();      // should print 3
-    //cout << threetree.parent(3);   // should print 5 // have problem
-    //cout << threetree.parent(7);   // should print 5 // have problem
-    cout << threetree.left(5);     // should print 3
-    cout << threetree.right(5);    // should print 7
+    cout << tree.size() << " ";      // should print 9
+    cout << tree.parent(3) << " ";   // should print 5
+    cout << tree.parent(7) << " ";   // should print 9
+    cout << tree.left(5) << " ";     // should print 3
+    cout << tree.right(5) << " ";    // should print 9
     cout << endl;
-    threetree.insert(5);    // should throw an exception, since 5 already exists.
-  } catch (...) {
-    cout << "Caught exception!" << endl;
+    cout << endl;
+
+    //----------------------------------------------------
+
+    // remove check
+    tree.remove(15);
+    tree.remove(5);
+    tree.remove(1);
+    tree.remove(9);
+
+    cout << "Tree: size=" << tree.size() << " root=" << tree.root() << endl << "   ";  // size=5, root=7.
+    tree.print();
+    cout << endl;
+
+    cout << tree.size() << " ";      // should print 5
+    cout << tree.parent(3) << " ";   // should print 7
+    cout << tree.parent(4) << " ";   // should print 3
+    cout << tree.left(7) << " ";     // should print 3
+    cout << tree.right(7) << " ";    // should print 10
+    cout << endl;
+    tree.remove(5);    // should throw an exception, since 5 not exists.
+  }
+  catch (const char* ex)
+  {
+    cout << "Caught exception: " << ex << endl;
+  }
+  catch (...)
+  {
+    cout << "Unknown exception!!!" << endl;
   }
 }

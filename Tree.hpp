@@ -26,7 +26,6 @@
 
 
 
-#include <exception>
 #include <iostream>
 
 #define LEN 3
@@ -34,7 +33,6 @@
 
 namespace ariel
 {
-	// AVL Tree
 	class Tree
 	{
 	private:
@@ -87,7 +85,6 @@ namespace ariel
 		// if the tree already have the node of the current key
 		node* insert(node* root, int k);
 
-
 		//@//--------------------------------------------------------------------
 		// The function which finding a minimum node
 		node* findmin(node* p);
@@ -97,24 +94,20 @@ namespace ariel
 		// The function which removing a minimum node
 		node* removemin(node* p);
 
-
 		//@//--------------------------------------------------------------------
 		// The function which removing the node of the current key.
 		// The function is throwing an exception
 		// if the node of the current key is not exist
 		node* remove(node* root, int k);
 
-
 		//@//--------------------------------------------------------------------
 		// The find function
 		const node* find(const node* root, int key) const;
-
 
 		//@//--------------------------------------------------------------------
 		// Function to print binary tree in 2D  
 		// It does reverse inorder traversal  
 		void print2DUtil(node* root, int space) const;
-
 
 		//@//--------------------------------------------------------------------
 		// The function is deleting the tree
@@ -131,11 +124,9 @@ namespace ariel
 		// Constructor
 		Tree();
 
-
 		////--------------------------------------------------------------------
 		// Distractor
 		~Tree();
-
 
 		////--------------------------------------------------------------------
 		// The insert function.
@@ -143,23 +134,19 @@ namespace ariel
 		// if the tree already have the node of the current key
 		void insert(int key);
 
-
 		////--------------------------------------------------------------------
 		// The remove function.
 		// The function is throwing an exception
 		// if the node of the current key is not exist
 		void remove(int key);
 
-
 		////--------------------------------------------------------------------
 		// The size function
 		int size() const;
 
-
 		////--------------------------------------------------------------------
 		// The contains function
 		bool contains(int key) const;
-
 
 		////--------------------------------------------------------------------
 		// The contains function.
@@ -167,13 +154,11 @@ namespace ariel
 		// if the tree empty
 		int root() const;
 
-
 		////--------------------------------------------------------------------
 		// The parent function.
 		// The function is throwing an exception
 		// if the current node not exist
 		int parent(int key) const;
-
 
 		////--------------------------------------------------------------------
 		// The left function
@@ -181,13 +166,11 @@ namespace ariel
 		// if the current node not exist
 		int left(int key) const;
 
-
 		////--------------------------------------------------------------------
 		// The right function
 		// The function is throwing an exception
 		// if the current node not exist
 		int right(int key) const;
-
 
 		////--------------------------------------------------------------------
 		// Wrapper over print2DUtil()  
