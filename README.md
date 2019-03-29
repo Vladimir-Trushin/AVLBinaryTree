@@ -1,3 +1,5 @@
+Name of student: Vladimir Trushin
+
 #task_2
 Second assignment: Binary tree, Test-driven development
 
