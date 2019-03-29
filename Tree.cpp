@@ -194,7 +194,7 @@ namespace ariel
 		// count
 		std::cout << std::endl;
 		for (int i = _len; i < space; i++)
-			std::cout << " ";
+			std::cout << "  ";
 		std::cout << root->_key << "\n";
 
 		// Process left child

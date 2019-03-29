@@ -28,7 +28,7 @@
 
 #include <iostream>
 
-#define LEN 3
+#define LEN 3 // Number space for function print2DUtil(), initializing the variable _len
 
 
 namespace ariel
