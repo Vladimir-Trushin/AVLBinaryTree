@@ -1,7 +1,6 @@
-Name of student: Vladimir Trushin
+Vladimir Trushin
 
-#task_2
-Second assignment: Binary tree, Test-driven development
+AVL binary tree, Test-driven development
 
 To create the demo and run, use the following command:
 make demo && ./demo
